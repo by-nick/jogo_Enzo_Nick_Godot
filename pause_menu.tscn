@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6djpjmrqixms"]
+
+[ext_resource type="Script" path="res://nivel/Pause_menu.gd" id="1_vo1jk"]
+[ext_resource type="Texture2D" uid="uid://dwfjwcr8my3v7" path="res://botoes/128px/Restart_128.png" id="2_puqw0"]
+[ext_resource type="Texture2D" uid="uid://dm75yynki8ybh" path="res://botoes/128px/Close_128.png" id="3_xo50n"]
+
+[sub_resource type="Theme" id="Theme_dxw1t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6gj6"]
+
+[node name="Pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_vo1jk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dxw1t")
+color = Color(0.47451, 0.615686, 1, 0.556863)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -146.0
+offset_right = 68.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j6gj6")
+
+[node name="voltar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_puqw0")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j6gj6")
+
+[node name="sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_xo50n")
+
+[connection signal="pressed" from="VBoxContainer/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://0rmcpuiof42c"]
+
+[ext_resource type="Script" path="res://menu_inicial.gd" id="1_r15sx"]
+[ext_resource type="Texture2D" uid="uid://bw8n1ec8nropf" path="res://Sprite Pack 1/Inserir um título.png" id="2_lkbvy"]
+
+[node name="Menu Inicial" type="CanvasLayer"]
+script = ExtResource("1_r15sx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.5, 326)
+scale = Vector2(0.903906, 0.905556)
+texture = ExtResource("2_lkbvy")
+
+[node name="comecar joguinho" type="Button" parent="."]
+offset_left = 435.0
+offset_top = 194.0
+offset_right = 707.0
+offset_bottom = 309.0
+theme_override_font_sizes/font_size = 27
+text = "Começar o Joguinho
+"
+
+[node name="Sair joguinho" type="Button" parent="."]
+offset_left = 459.0
+offset_top = 342.0
+offset_right = 682.0
+offset_bottom = 438.0
+theme_override_font_sizes/font_size = 27
+text = "Sair do Joguinho"
+
+[connection signal="pressed" from="comecar joguinho" to="." method="_on_comecar_joguinho_pressed"]
+[connection signal="pressed" from="Sair joguinho" to="." method="_on_sair_joguinho_pressed"]

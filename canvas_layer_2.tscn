@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbkprpvd5l6yc"]
+
+[ext_resource type="Script" path="res://nivel/CanvasLayer2.gd" id="1_81vck"]
+[ext_resource type="Texture2D" uid="uid://dlf0h1ydd23so" path="res://Coin-Sprites/botoes/128px/Close_128.png" id="2_aset2"]
+[ext_resource type="Texture2D" uid="uid://bfqny80uu1n20" path="res://Coin-Sprites/botoes/128px/Restart_128.png" id="3_anfo7"]
+[ext_resource type="Texture2D" uid="uid://bt30v8ra7r7lh" path="res://Coin-Sprites/botoes/128px/Back_128.png" id="4_uitt4"]
+
+[node name="CanvasLayer2" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_81vck")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_right = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_aset2")
+
+[node name="Reiniciar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_anfo7")
+
+[node name="Voltar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_uitt4")
+
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
